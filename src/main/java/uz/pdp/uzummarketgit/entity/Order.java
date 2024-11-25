@@ -13,9 +13,8 @@ public class Order {
     private Integer userId;
     private static Integer idGenerator = 1;
 
-    public Order(LocalDateTime localDateTime, Status status,Integer userId) {
+    public Order(LocalDateTime localDateTime, Status status) {
         this.localDateTime = localDateTime;
         this.status = status;
-        this.userId = userId;
     }
 }

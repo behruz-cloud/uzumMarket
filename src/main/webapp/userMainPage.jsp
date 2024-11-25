@@ -107,12 +107,9 @@
                     response.sendRedirect("/main.jsp");
                 }
             }
-            if (cookie.getName().equals("userjon")) {
-                if (cookie.getValue().equals("user123")) {
-
-                }
-            }
         }
+
+        response.addCookie(new Cookie("userId","1234567890"));
     }
 
     Integer categoryId;

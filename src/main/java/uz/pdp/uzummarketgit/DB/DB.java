@@ -8,6 +8,7 @@ import java.util.List;
 public interface DB {
     List<User> USERS = new ArrayList(List.of(
             new User("asd", "123",Role.USER),
+            new User("aaa", "123",Role.USER),
             new User("adminjon", "root123",Role.ADMIN)
     ));
     List<Product> basket = new ArrayList();

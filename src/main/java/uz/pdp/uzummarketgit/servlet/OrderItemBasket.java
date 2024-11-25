@@ -25,8 +25,7 @@ public class OrderItemBasket extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Order order = new Order(
                 LocalDateTime.now(),
-                Status.NEW,
-                LoginServlet.currentUser.getId()
+                Status.NEW
         );
         for (Product product : basket) {
             OrderItem orderItem = new OrderItem();

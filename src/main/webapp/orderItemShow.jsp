@@ -88,18 +88,16 @@
     <h1>Buyurtma tafsilotlari</h1>
     <ul>
         <%
-            int userId=0;
-            Cookie[] cookies = request.getCookies();
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("userId")) {
-                    userId= Integer.valueOf(cookie.getValue());
-                }
-            }
+//            int userId=0;
+//            Cookie[] cookies = request.getCookies();
+//            for (Cookie cookie : cookies) {
+//                if (cookie.getName().equals("userId")) {
+//                    userId= Integer.valueOf(cookie.getValue());
+//                }
+//            }
             Integer orderId = Integer.valueOf(request.getParameter("orderId"));
-            int finalUserId = userId;
             Order order = DB.ORDERS.stream().
-                    filter(item -> item.getId().equals(orderId)).
-                    filter(item-> item.getUserId().equals(finalUserId)).findFirst().
+                    filter(item -> item.getId().equals(orderId)).findFirst().
                     get();
             List<OrderItem> orderItems = DB.ORDER_ITEMS.stream().filter(item -> item.getOrderId().equals(orderId)).toList();
             int totalPrice = 0;

@@ -69,6 +69,7 @@
 <body>
 
 <div class="container">
+
     <h1>Buyurtmangiz</h1>
     <div class="product-list">
         <%
@@ -77,11 +78,10 @@
                 if (cookie.getName().equals("userId")) {
                     Optional<User> first = DB.USERS.stream().filter(item -> item.getId().equals(Integer.parseInt(cookie.getValue()))).findFirst();
                     if (first.isPresent()) {
-                        LoginServlet.currentUser=first.get();
-                        return;
+
                     }else {
-                        response.sendRedirect("/loginPage.jsp");
-                        return;
+//                        response.sendRedirect("/loginPage.jsp");
+//                        return;
                     }
                 }
             }

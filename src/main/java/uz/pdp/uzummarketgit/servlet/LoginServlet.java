@@ -25,8 +25,8 @@ public class LoginServlet extends HttpServlet {
         if (userOptional.isPresent()) {
             if (userOptional.get().getRole().equals(Role.ADMIN)) {
                 resp.addCookie(new Cookie("adminjon", "admin123"));
-                resp.sendRedirect("/userMainPage.jsp");
-            } else {
+                resp.sendRedirect("/main.jsp");
+            } else { 
                 resp.addCookie(new Cookie("userId",String.valueOf(userOptional.get().getId())));
                 resp.sendRedirect("/userMainPage.jsp");
             }
